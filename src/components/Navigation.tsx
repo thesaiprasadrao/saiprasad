@@ -77,7 +77,7 @@ const Navigation = () => {
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               <span className="sr-only">Toggle theme</span>
             </Button>
-            <a href="https://drive.google.com/file/d/1v8PFgKUHtAGn0lV3b909zvH59qMU58bN/view?usp=sharing" target="_blank">
+            <a href="https://drive.google.com/file/d/1_ndqPqnuhgqL2uDl05oDnoZPnyd0N4lH/view" target="_blank">
             <Button size="sm" className="bg-gradient-primary">
               Resume
             </Button>
