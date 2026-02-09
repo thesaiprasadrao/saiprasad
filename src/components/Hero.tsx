@@ -42,7 +42,10 @@ const Hero = () => {
 
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
           <span className="block text-foreground">Hi, I'm</span>
-          <span className="block bg-gradient-primary bg-clip-text text-transparent mt-2 animate-blur-in">
+          <span
+            className="block bg-gradient-primary bg-clip-text text-transparent mt-2 animate-blur-in"
+            style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
+          >
             Saiprasad Rao
           </span>
         </h1>
