@@ -10,7 +10,9 @@ export default function Intro() {
           style={{ 
             borderRadius: "10px",
             objectFit: "cover",
-            border: "1px solid var(--border)"
+            border: "1px solid var(--border)",
+            maxWidth: "100%",
+            height: "auto"
           }} 
         />
       </div>
