@@ -24,7 +24,9 @@ export default function Home() {
       <Intro />
       <Divider />
       <ProjectsSection />
+      <Divider />
       <StackSection />
+      <Divider />
       <WinsSection />
       <Divider />
       <Footer />

@@ -4,7 +4,8 @@ export type Project = {
   desc: string;
   tags: string[];
   badge: string | null;
-  live: string | null;
+  live?: string | null;
+  github?: string | null;
 };
 
 export type StackItem = {
@@ -32,6 +33,7 @@ export const projects: Project[] = [
     tags: ["Node.js", "Supabase", "TypeScript", "Fastify", "REST API"],
     badge: "🚍",
     live: null,
+    github: "https://github.com/thesaiprasadrao/safar-saathi",
   },
   {
     name: "ScamShield",
@@ -39,7 +41,7 @@ export const projects: Project[] = [
     desc: "AI-powered scam analyzer using OCR (Pytesseract) to extract text from suspicious screenshots. Next.js + FastAPI + NextAuth.",
     tags: ["Next.js", "FastAPI", "Pytesseract", "NextAuth", "OCR"],
     badge: "🕵️‍♂️",
-    live: null,
+    github: "https://github.com/thesaiprasadrao/scam-sheild-analyzer",
   },
   {
     name: "BruteForce Hackathon Page",
@@ -49,21 +51,21 @@ export const projects: Project[] = [
     badge: "🏆",
     live: "https://bruteforcecsbs.dev",
   },
-  {
-    name: "OneVote",
-    href: "#",
-    desc: "Anonymous voting system with IP-based single-vote enforcement, Chart.js admin dashboard, and a clean TailwindCSS UI.",
-    tags: ["Node.js", "Express", "MySQL", "Chart.js", "TailwindCSS"],
-    badge: "🗳️",
-    live: null,
-  },
+  // {
+  //   name: "OneVote",
+  //   href: "#",
+  //   desc: "Anonymous voting system with IP-based single-vote enforcement, Chart.js admin dashboard, and a clean TailwindCSS UI.",
+  //   tags: ["Node.js", "Express", "MySQL", "Chart.js", "TailwindCSS"],
+  //   badge: "🗳️",
+  //   live: null,
+  // },
   {
     name: "Mood Diary",
     href: "#",
     desc: "Privacy-first journaling app. 100% local storage, mood analytics, sub-100ms interactions.",
     tags: ["HTML", "CSS", "JavaScript"],
     badge: "😊",
-    live: "#",
+    live: "https://thesaiprasadrao.github.io/mood-diary/",
   },
 ];
 
@@ -76,8 +78,7 @@ export const stack: StackItem[] = [
   { label: "specialties",  items: "OCR (Pytesseract), NextAuth, real-time systems" },
 ];
 
-export const wins: string[] = [
-  "🥇 Top 5 — Udaya 1.0 Intercollegiate Hackathon",
+export const extras: string[] = [
   "🥈 Top 10 — CodeFury 8.0 National Hackathon (UVCE)",
   "🛠️ Technical Team , Udbhava — mentored 20+ teams",
 ];

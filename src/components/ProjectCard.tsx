@@ -1,7 +1,7 @@
 import Tags from "./Tags";
 import type { Project } from "@/src/data";
 
-export default function ProjectCard({ name, href, desc, tags, badge, live }: Project) {
+export default function ProjectCard({ name, href, desc, tags, badge, live, github }: Project) {
   return (
     <li style={{ fontSize: "0.92rem", lineHeight: 1.6, fontWeight: 300 }}>
       {badge && <>{badge} </>}
@@ -10,14 +10,25 @@ export default function ProjectCard({ name, href, desc, tags, badge, live }: Pro
       </a>
       {" — "}
       {desc}
-      {live && live !== "#" && (
+      <br />
+      {(live && live !== "#") || (github && github !== "#") ? (
         <>
           {" "}
-          <a href={live} target="_blank" rel="noopener noreferrer" style={{ color: "var(--muted)", fontSize: "0.88rem" }}>
-            Live ↗
-          </a>
+          <span style={{ color: "var(--muted)", fontSize: "0.88rem" }}>
+            {live && live !== "#" && (
+              <a href={live} target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+                Live ↗
+              </a>
+            )}
+            {live && live !== "#" && github && github !== "#" && " · "}
+            {github && github !== "#" && (
+              <a href={github} target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+                GitHub ↗
+              </a>
+            )}
+          </span>
         </>
-      )}
+      ) : null}
       <Tags tags={tags} />
     </li>
   );
