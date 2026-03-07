@@ -11,7 +11,7 @@ export default function Home() {
       className="container"
       style={{ maxWidth: 600, margin: "0 auto", padding: "56px 24px 80px" }}
     >
-      <div style={{
+      {/* <div style={{
         fontFamily: "'Geist Mono', monospace",
         fontSize: "0.8rem",
         color: "var(--muted)",
@@ -19,7 +19,7 @@ export default function Home() {
         marginBottom: 36,
       }}>
         saiprasadrao.dev
-      </div>
+      </div> */}
 
       <Intro />
       <Divider />

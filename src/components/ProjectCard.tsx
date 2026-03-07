@@ -10,10 +10,10 @@ export default function ProjectCard({ name, href, desc, tags, badge, live }: Pro
       </a>
       {" — "}
       {desc}
-      {live && (
+      {live && live !== "#" && (
         <>
           {" "}
-          <a href={live} style={{ color: "var(--muted)", fontSize: "0.88rem" }}>
+          <a href={live} target="_blank" rel="noopener noreferrer" style={{ color: "var(--muted)", fontSize: "0.88rem" }}>
             Live ↗
           </a>
         </>

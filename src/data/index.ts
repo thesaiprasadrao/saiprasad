@@ -30,7 +30,7 @@ export const projects: Project[] = [
     href: "#",
     desc: "Real-time bus tracking platform with live location updates every 3 seconds. Built on Node.js, Supabase, and Fastify with full Swagger docs.",
     tags: ["Node.js", "Supabase", "TypeScript", "Fastify", "REST API"],
-    badge: null,
+    badge: "🚍",
     live: null,
   },
   {
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     href: "#",
     desc: "AI-powered scam analyzer using OCR (Pytesseract) to extract text from suspicious screenshots. Next.js + FastAPI + NextAuth.",
     tags: ["Next.js", "FastAPI", "Pytesseract", "NextAuth", "OCR"],
-    badge: null,
+    badge: "🕵️‍♂️",
     live: null,
   },
   {
@@ -47,14 +47,14 @@ export const projects: Project[] = [
     desc: "High-performance landing page with Three.js 3D visuals and a terminal-style onboarding interface.",
     tags: ["Next.js", "Three.js", "TypeScript", "Locomotive.js"],
     badge: "🏆",
-    live: "bruteforcecsbs.dev",
+    live: "https://bruteforcecsbs.dev",
   },
   {
     name: "OneVote",
     href: "#",
     desc: "Anonymous voting system with IP-based single-vote enforcement, Chart.js admin dashboard, and a clean TailwindCSS UI.",
     tags: ["Node.js", "Express", "MySQL", "Chart.js", "TailwindCSS"],
-    badge: null,
+    badge: "🗳️",
     live: null,
   },
   {
@@ -62,7 +62,7 @@ export const projects: Project[] = [
     href: "#",
     desc: "Privacy-first journaling app. 100% local storage, mood analytics, sub-100ms interactions.",
     tags: ["HTML", "CSS", "JavaScript"],
-    badge: null,
+    badge: "😊",
     live: "#",
   },
 ];

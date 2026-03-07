@@ -19,8 +19,8 @@ export default function Intro() {
       <p><strong>Hello world 👋</strong></p>
 
       <p>
-        I&apos;m Saiprasad Rao, a CS undergrad at Dayananda Sagar College of Engineering,
-        Bengaluru — welcome to my little corner on the Internet.
+        I&apos;m Saiprasad Rao, a CS undergrad from
+        Bengaluru  — welcome to my little corner on the Internet.
       </p>
 
       <p>
