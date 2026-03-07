@@ -43,14 +43,14 @@ export const projects: Project[] = [
     badge: "🕵️‍♂️",
     github: "https://github.com/thesaiprasadrao/scam-sheild-analyzer",
   },
-  {
-    name: "BruteForce Hackathon Page",
-    href: "#",
-    desc: "High-performance landing page with Three.js 3D visuals and a terminal-style onboarding interface.",
-    tags: ["Next.js", "Three.js", "TypeScript", "Locomotive.js"],
-    badge: "🏆",
-    live: "https://bruteforcecsbs.dev",
-  },
+  // {
+  //   name: "BruteForce Hackathon Page",
+  //   href: "#",
+  //   desc: "High-performance landing page with Three.js 3D visuals and a terminal-style onboarding interface.",
+  //   tags: ["Next.js", "Three.js", "TypeScript", "Locomotive.js"],
+  //   badge: "🏆",
+  //   live: "https://bruteforcecsbs.dev",
+  // },
   // {
   //   name: "OneVote",
   //   href: "#",
