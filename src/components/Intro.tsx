@@ -4,15 +4,15 @@ export default function Intro() {
       <div style={{ marginBottom: 32 }}>
         <img 
           src="/gifgif.gif" 
-          alt="intro" 
+          alt="cool gif" 
           width={550}
-          height={200}
+          height={180}
           style={{ 
-            borderRadius: "10px",
+            borderRadius: "15px",
             objectFit: "cover",
             border: "1px solid var(--border)",
             maxWidth: "100%",
-            height: "auto"
+            
           }} 
         />
       </div>
