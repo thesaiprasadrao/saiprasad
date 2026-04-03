@@ -1,5 +1,6 @@
 import Intro from "@/src/components/Intro";
 import Divider from "@/src/components/Divider";
+import ExperienceSection from "@/src/components/ExperienceSection";
 import ProjectsSection from "@/src/components/ProjectsSection";
 import StackSection from "@/src/components/StackSection";
 import WinsSection from "@/src/components/WinsSection";
@@ -14,6 +15,8 @@ export default function Home() {
       
 
       <Intro />
+      <Divider />
+      <ExperienceSection />
       <Divider />
       <ProjectsSection />
       <Divider />

@@ -8,6 +8,15 @@ export type Project = {
   github?: string | null;
 };
 
+export type Experience = {
+  role: string;
+  company: string;
+  date: string;
+  desc: string;
+  url?: string;
+  badge?: string;
+};
+
 export type StackItem = {
   label: string;
   items: string;
@@ -26,6 +35,16 @@ export type Writing = {
 };
 
 export const projects: Project[] = [
+  //
+  {
+  name: "Second Brain",
+  href: "https://thesaiprasadrao.github.io/second-brain/",
+  desc: "Personal AI assistant for WhatsApp or Telegram that processes messages in <3s, supports multimedia parsing, and enables semantic search across notes.",
+  tags: ["Node.js", "SQLite", "LLM Inference", "Embeddings"],
+  badge: "🤖",
+  live: "https://thesaiprasadrao.github.io/second-brain/",
+  github: "https://github.com/thesaiprasadrao/second-brain",
+} ,
   {
     name: "Safar Saathi",
     href: "#",
@@ -43,22 +62,6 @@ export const projects: Project[] = [
     badge: "🕵️‍♂️",
     github: "https://github.com/thesaiprasadrao/scam-sheild-analyzer",
   },
-  // {
-  //   name: "BruteForce Hackathon Page",
-  //   href: "#",
-  //   desc: "High-performance landing page with Three.js 3D visuals and a terminal-style onboarding interface.",
-  //   tags: ["Next.js", "Three.js", "TypeScript", "Locomotive.js"],
-  //   badge: "🏆",
-  //   live: "https://bruteforcecsbs.dev",
-  // },
-  // {
-  //   name: "OneVote",
-  //   href: "#",
-  //   desc: "Anonymous voting system with IP-based single-vote enforcement, Chart.js admin dashboard, and a clean TailwindCSS UI.",
-  //   tags: ["Node.js", "Express", "MySQL", "Chart.js", "TailwindCSS"],
-  //   badge: "🗳️",
-  //   live: null,
-  // },
   {
     name: "Mood Diary",
     href: "#",
@@ -74,13 +77,22 @@ export const stack: StackItem[] = [
   { label: "frontend",     items: "React.js, Next.js, TailwindCSS, Three.js" },
   { label: "backend",      items: "Node.js, Fastify, Express, Spring, FastAPI" },
   { label: "databases",    items: "MySQL, PostgreSQL, MongoDB, Supabase" },
-  { label: "tools",        items: "Git, Docker, Swagger, JMeter, Figma" },
-  { label: "specialties",  items: "OCR (Pytesseract), NextAuth, real-time systems" },
+  { label: "tools",        items: "Git, Docker, Swagger, Figma" },
+];
+
+export const experiences: Experience[] = [
+  {
+    role: "Backend Developer Intern",
+    company: "HackWithIndia",
+    date: "Jan 2026 - Present",
+    desc: `Contributed to core platform development of <a href="https://devnovate.co" target="_blank" rel="noopener noreferrer">devnovate.co</a> and built a fully automated certificate generation and email delivery system capable of sending 100,000+ certificates per day.`,
+    badge: "🚀",
+  }
 ];
 
 export const extras: string[] = [
+  "🛠️ Technical Team Lead @ Udbhava",
   "🥈 Top 10 — CodeFury 8.0 National Hackathon (UVCE)",
-  "🛠️ Technical Team , Udbhava — mentored 20+ teams",
 ];
 
 export const navLinks: NavLink[] = [
