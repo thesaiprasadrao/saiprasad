@@ -8,7 +8,7 @@ export default function ProjectCard({ name, href, desc, tags, badge, live, githu
       <a href={href} target="_blank" rel="noopener" style={{ fontWeight: 500 }}>
         {name}
       </a>
-      {" — "}
+      <br />
       {desc}
       <br />
       {(live && live !== "#") || (github && github !== "#") ? (

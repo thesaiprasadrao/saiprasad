@@ -29,7 +29,7 @@ export default function Intro() {
         grind.
       </p>
 
-      <p>started with curiosity, stayed for the craft. still learning every day.</p>
+      <p>started with curiosity, stayed for the craft.</p>
 
       <p>
         reach me at ✉️{" "}

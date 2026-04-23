@@ -35,40 +35,41 @@ export type Writing = {
 };
 
 export const projects: Project[] = [
-  //
   {
-  name: "Second Brain",
-  href: "https://thesaiprasadrao.github.io/second-brain/",
-  desc: "Personal AI assistant for WhatsApp or Telegram that processes messages in <3s, supports multimedia parsing, and enables semantic search across notes.",
-  tags: ["Node.js", "SQLite", "LLM Inference", "Embeddings"],
-  badge: "🤖",
-  live: "https://thesaiprasadrao.github.io/second-brain/",
-  github: "https://github.com/thesaiprasadrao/second-brain",
-} ,
+    name: "Second Brain",
+    href: "https://thesaiprasadrao.github.io/second-brain/",
+    desc: "AI assistant for WhatsApp/Telegram with sub-3s responses and semantic search across conversations and notes.",
+    tags: ["Node.js", "SQLite", "Semantic Search"],
+    badge: "🤖",
+    live: "https://thesaiprasadrao.github.io/second-brain/",
+    github: "https://github.com/thesaiprasadrao/second-brain",
+  },
   {
     name: "Safar Saathi",
     href: "#",
-    desc: "Real-time bus tracking platform with live location updates every 3 seconds. Built on Node.js, Supabase, and Fastify with full Swagger docs.",
+    desc: "Real-time bus tracking system with 3-second location updates, built for high-frequency data streaming.",
     tags: ["Node.js", "Supabase", "TypeScript", "Fastify", "REST API"],
     badge: "🚍",
-    live: null,
+    live: "https://safarsathi.saiprasadrao.in/",
     github: "https://github.com/thesaiprasadrao/safar-saathi",
   },
   {
     name: "ScamShield",
     href: "#",
-    desc: "AI-powered scam analyzer using OCR (Pytesseract) to extract text from suspicious screenshots. Next.js + FastAPI + NextAuth.",
+    desc: "AI-powered scam detection tool that extracts and analyzes text from screenshots using OCR.",
     tags: ["Next.js", "FastAPI", "Pytesseract", "NextAuth", "OCR"],
     badge: "🕵️‍♂️",
+    live: "https://scam-sheild.saiprasadrao.in/",
     github: "https://github.com/thesaiprasadrao/scam-sheild-analyzer",
   },
   {
     name: "Mood Diary",
-    href: "#",
-    desc: "Privacy-first journaling app. 100% local storage, mood analytics, sub-100ms interactions.",
+    href: "https://thesaiprasadrao.github.io/mood-diary/",
+    desc: "Privacy-first journaling app with local-only storage and instant mood insights.",
     tags: ["HTML", "CSS", "JavaScript"],
     badge: "😊",
     live: "https://thesaiprasadrao.github.io/mood-diary/",
+    github: null,
   },
 ];
 
@@ -85,7 +86,7 @@ export const experiences: Experience[] = [
     role: "Backend Developer Intern",
     company: "HackWithIndia",
     date: "Jan 2026 - Present",
-    desc: `Contributed to core platform development of <a href="https://devnovate.co" target="_blank" rel="noopener noreferrer">devnovate.co</a> and built a fully automated certificate generation and email delivery system capable of sending 100,000+ certificates per day.`,
+    desc: `Built and scaled an automated certificate generation and email system delivering 100,000+ certificates/day for devnovate.co.`,
     badge: "🚀",
   }
 ];
