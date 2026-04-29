@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ScrollReveal from "@/src/components/ScrollReveal";
-import ThemeToggle from "@/src/components/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "Saiprasad Rao",
@@ -16,7 +15,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeToggle />
         <ScrollReveal>{children}</ScrollReveal>
       </body>
     </html>
