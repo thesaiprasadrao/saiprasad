@@ -40,7 +40,7 @@ export default function Intro() {
         <a href="https://linkedin.com/in/saiprasadrao/" target="_blank" rel="noopener">LinkedIn</a>
       </p>
 
-      <a href="https://drive.google.com/file/d/1xhov1dNYBnH3XvXFa4OWBqE9ZDeIIUgo/view?usp=sharing" target="_blank" rel="noopener">
+      <a href="https://drive.google.com/file/d/19ceHsb_AbPveL3kwAYlgHUKrBx-kWfWG/view?usp=sharing" target="_blank" rel="noopener">
         <p>📄 my resume {" "}</p>
       </a>
     </>
