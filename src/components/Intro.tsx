@@ -19,20 +19,15 @@ export default function Intro() {
       <p><strong>Hello world 👋</strong></p>
 
       <p>
-        I&apos;m <strong style={{ textDecoration: "underline" }}>Saiprasad Rao</strong>, a CS undergrad from
-        Bengaluru  — welcome to my little corner on the Internet.
+        I'm <strong style={{ textDecoration: "underline" }}>Saiprasad Rao</strong>, a web developer based in Bengaluru.
       </p>
 
       <p>
-        i build things for the web. backends, frontends, whatever it takes to make an idea
-        real. currently deep into real-time systems, AI tooling, and the occasional hackathon
-        grind.
+        I build backends, frontends, and whatever sits between them. Lately that's been AI tooling, and self-hosted experiments that probably shouldn't be running on old hardware.
       </p>
 
-      <p>started with curiosity, stayed for the craft.</p>
-
       <p>
-        reach me at ✉️{" "}
+        Reach me at ✉️{" "}
         <a href="mailto:saiprasadrao1234@gmail.com">saiprasadrao1234@gmail.com</a>
         &nbsp;·&nbsp;
         <a href="https://github.com/thesaiprasadrao" target="_blank" rel="noopener">GitHub</a>

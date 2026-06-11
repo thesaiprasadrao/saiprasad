@@ -93,7 +93,7 @@ export const stack: StackItem[] = [
 export const experiences: Experience[] = [
   {
     role: "Backend Developer Intern",
-    company: "HackWithIndia",
+    company: "Devnovate",
     date: "Jan 2026 - Present",
     desc: `Built and scaled an automated certificate generation and email system delivering 100,000+ certificates/day for devnovate.co.`,
     badge: "🚀",
