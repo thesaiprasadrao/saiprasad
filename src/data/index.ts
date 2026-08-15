@@ -94,7 +94,7 @@ export const experiences: Experience[] = [
   {
     role: "Backend Developer Intern",
     company: "Devnovate",
-    date: "Jan 2026 - Present",
+    date: "Jan 2026 - Jul 2026",
     desc: `Built and scaled an automated certificate generation and email system delivering 100,000+ certificates/day for devnovate.co.`,
     badge: "🚀",
   }

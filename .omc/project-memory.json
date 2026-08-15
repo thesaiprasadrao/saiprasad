@@ -121,6 +121,121 @@
       ]
     }
   },
-  "hotPaths": [],
+  "hotPaths": [
+    {
+      "path": "app/page.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330145205,
+      "type": "file"
+    },
+    {
+      "path": "app/layout.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330145610,
+      "type": "file"
+    },
+    {
+      "path": "src/data/index.ts",
+      "accessCount": 1,
+      "lastAccessed": 1781330146030,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Intro.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330146849,
+      "type": "file"
+    },
+    {
+      "path": "app/globals.css",
+      "accessCount": 1,
+      "lastAccessed": 1781330147149,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ExperienceCard.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330152483,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ExperienceSection.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330153081,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ProjectCard.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330153375,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ProjectsSection.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330153749,
+      "type": "file"
+    },
+    {
+      "path": "src/components/StackSection.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330154198,
+      "type": "file"
+    },
+    {
+      "path": "src/components/WinsSection.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330154796,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Footer.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330155155,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ScrollReveal.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330156055,
+      "type": "file"
+    },
+    {
+      "path": "src/components/SectionHeading.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330156628,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Tags.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330156948,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Divider.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330157449,
+      "type": "file"
+    },
+    {
+      "path": "app/writing/page.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330157859,
+      "type": "file"
+    },
+    {
+      "path": "app/writing/[slug]/page.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1781330158168,
+      "type": "file"
+    },
+    {
+      "path": "next.config.js",
+      "accessCount": 1,
+      "lastAccessed": 1781330158556,
+      "type": "file"
+    }
+  ],
   "userDirectives": []
 }
