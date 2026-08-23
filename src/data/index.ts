@@ -91,18 +91,24 @@ export const stack: StackItem[] = [
 ];
 
 export const experiences: Experience[] = [
+   {
+    role : "Software Developer Intern" ,
+    company : "OpenText" ,
+    date : "Aug 2026 - Ongoing" ,
+    desc: "",
+    badge: "📂",
+  } ,
   {
     role: "Backend Developer Intern",
     company: "Devnovate",
     date: "Jan 2026 - Jul 2026",
     desc: `Built and scaled an automated certificate generation and email system delivering 100,000+ certificates/day for devnovate.co.`,
     badge: "🚀",
-  }
+  },
 ];
 
 export const extras: string[] = [
   "🛠️ Technical Team Lead @ Udbhava",
-  "🥈 Top 10 — CodeFury 8.0 National Hackathon (UVCE)",
 ];
 
 export const navLinks: NavLink[] = [
