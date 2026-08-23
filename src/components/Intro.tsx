@@ -19,7 +19,7 @@ export default function Intro() {
       <p><strong>Hello world 👋</strong></p>
 
       <p>
-        I'm <strong style={{ textDecoration: "underline" }}>Saiprasad Rao</strong>, a web developer based in Bengaluru.
+        I'm <strong style={{ textDecoration: "underline" }}>Saiprasad Rao</strong>, a software developer based in Bengaluru.
       </p>
 
       <p>
