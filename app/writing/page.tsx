@@ -42,7 +42,7 @@ export default function WritingPage() {
           gap: 20,
           marginBottom: 28,
         }}>
-          {writings.map(({ slug, title, date, description }) => (
+          {[...writings].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map(({ slug, title, date, description }) => (
             <li key={slug}>
               <Link
                 href={`/writing/${slug}`}
