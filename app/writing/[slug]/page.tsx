@@ -5,9 +5,11 @@ import { writings } from "@/src/data";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import NobodyReadsFixedStuff from "@/content/writing/nobody-reads-fixed-stuff.mdx";
+import AiJailbreakCtf from "@/content/writing/ai-jailbreak-ctf.mdx";
 
 const contentBySlug: Record<string, () => React.ReactNode> = {
   "nobody-reads-fixed-stuff": () => <NobodyReadsFixedStuff />,
+  "ai-jailbreak-ctf": () => <AiJailbreakCtf />,
 };
 
 type Props = { params: { slug: string } };
@@ -46,7 +48,7 @@ export default function WritingPost({ params }: Props) {
         {` / ${post.slug}`}
       </div>
 
-      <h1 style={{ fontSize: "1.1rem", fontWeight: 500, marginBottom: 8 }}>{post.title}</h1>
+      <h1 style={{ fontSize: "2rem", fontWeight: 500, marginBottom: 8 }}>{post.title}</h1>
 
       <div style={{
         fontFamily: "'Geist Mono', monospace",

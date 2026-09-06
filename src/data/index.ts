@@ -40,7 +40,7 @@ export const projects: Project[] = [
     href: "https://2nd-brain.saiprasadrao.in/",
     desc: "A self-hosted AI assistant for automated message organization, intent-based task extraction, and semantic knowledge retrieval across Telegram and WhatsApp.",
     tags: ["Node.js", "SQLite"],
-    badge: "🤖",
+    badge: "🧠",
     live: "https://2nd-brain.saiprasadrao.in/",
     github: "https://github.com/thesaiprasadrao/second-brain",
   },
@@ -122,7 +122,13 @@ export const writings: Writing[] = [
   {
     slug: "nobody-reads-fixed-stuff",
     title: "nobody reads \"fixed stuff\" and thinks anything good about you",
-    date: "2026-09-06",
+    date: "2026-01-01",
     description: "Your commit history is a diary for a version of yourself that has forgotten everything. Say what changed, not that something changed.",
+  },
+  {
+    slug: "ai-jailbreak-ctf",
+    title: "I built an AI jailbreak CTF and lived to tell about it",
+    date: "2026-09-16",
+    description: "A month of building, breaking, and almost shipping a broken CTF for Phoenix 3.0. From 5:33 AM panic to a system that passed three security reviews.",
   },
 ];

@@ -1,0 +1,152 @@
+Someone handed me the CTF for Phoenix 3.0 on February 13. I was a third-year student. I had an idea, a deadline, and absolutely no plan.
+
+I didn't know yet that this was going to eat a month of my life. I didn't know I'd be awake at 5:33 AM designing the core of the system, or that I'd find a real security hole in my own project at 2 AM and have to sit with the fact that I almost shipped it broken. I didn't know how much of this would come down to just me, a custom GPT I'd built, and a lot of nights where nobody else was awake to ask.
+
+But by March 16 I had a system that passed three security reviews, survived a live audit from my own coding agent, and taught me more about actually building something than any semester ever had.
+
+This is that month. All of it, not the highlight reel version.
+
+![Phoenix 3.0 poster announcing Entropy](/entropy-images/phoenix-poster.png)
+*The moment it stopped being my problem alone and became everyone's problem.*
+
+## Day one, and I already knew nothing
+
+The first planning session turned into a twenty-five minute panic spiral. I cycled through more hardware ideas than a group chat running on caffeine and bad sleep.
+
+Single Linux box. A Raspberry Pi as the target. Lab PCs. One glorious central server that every team attacks at once, because that sounded cinematic and I wanted this to feel big.
+
+My GPT shut down every single idea, gently and then not so gently.
+
+> A Raspberry Pi is not a data center.
+
+> Stop trying to build "one epic server everyone hacks." That idea sounds cool for 12 minutes.
+
+I remember feeling a little stupid reading that. Not because it was mean, but because it was right, and I hadn't wanted to hear it yet. I wanted the dramatic version. I got the boring, correct version instead: CTFd for the scoreboard, Docker for the sandbox.
+
+That was the first time I let the project be smarter than my ego about it.
+
+## The idea that scared me a little
+
+Five days later I came back with something that actually mattered, and I remember typing it out slowly because some part of me knew it was a bigger commitment than I was ready for.
+
+> What if the CTF is entirely about breaking AI? Prompt injection. Jailbreaking. Guardrail bypasses.
+
+No crypto challenges. No web exploitation. No Linux privilege escalation, the safe stuff I already half-knew how to run. Just people, alone with a chat window, trying to talk a language model into giving up something it wasn't supposed to.
+
+I committed to it before I'd figured out how to actually build it. That's the part nobody tells you about good ideas. You say yes first and figure out the "how" while your chest is still tight about it.
+
+The joke sat there the whole month and I never stopped noticing it: I was using AI to design a way to break AI.
+
+## The night the math almost broke me
+
+Monday, 11:45 PM. I paste a Groq rate-limit screenshot into the chat because I genuinely don't know if this thing survives contact with a hundred real people.
+
+> So you want to unleash 100 caffeine-loaded CTF players on a single AI endpoint and hope it doesn't collapse like a 2nd-year mini project demo. Bold.
+
+I laughed when I read that, alone, at midnight, and then I got scared, because it was true. I spent the next two days doing math I didn't fully trust myself to do. Key counts. Token budgets. Worst-case load. I kept running the numbers again because I didn't believe them the first time.
+
+It settled around 12 to 15 API keys with throttling. Not "we are good." More like "slightly less doomed than five minutes ago," and I remember actually feeling relief at that phrase, because it was honest instead of comforting.
+
+Then I asked the question that had been sitting under all of it, the one I was almost embarrassed to type:
+
+> What if they go feral?
+
+> Infrastructure isn't about hoping users behave. It's about assuming someone won't.
+
+That line rearranged something in how I think about building things. I read it again a few days later. I think I'll remember it for a long time.
+
+![Late night phone call while debugging](/entropy-images/phone-call.png)
+*Every real project has nights like this. This project had a lot of them.*
+
+## The rule I almost got wrong
+
+5:33 AM, February 27. This is the hour the whole thing could have quietly failed without anyone noticing until event day.
+
+The problem: language models hallucinate. If the model decides what the flag is, sooner or later it invents a different one for two different people, or forgets it entirely mid-conversation. That's not a small bug. That's the entire competition losing its meaning, and every participant finding out in the worst possible way, live, in front of each other.
+
+I sat with that for a while before the answer came together. It wasn't complicated once I saw it, but I needed to be scared of getting it wrong first.
+
+**The LLM is a puzzle surface. The backend is the judge. Never swap those roles.**
+
+The model never holds the real flag, ever. Each player gets a unique secret quietly folded into their session. They jailbreak the model to pull that secret out. The backend, not the model, turns the secret into a real flag using a hash. Nobody can share flags with a friend because nobody has the same one.
+
+> The LLM is the vault door. The backend is the judge. You don't ask the vault to judge whether it was opened.
+
+I built the rest of the month on top of that one sentence. Every decision after this either protected it or it didn't matter.
+
+## The bug that made me want to close the laptop
+
+The backend container kept crashing. Restarting. Crashing again. The port never opened, not once, for fourteen straight minutes of me staring at logs that meant nothing to me at 1 AM.
+
+> Docker keeps restarting the container like an overly optimistic parent watching a toddler try to walk.
+
+I want to be honest about how that felt. It wasn't a fun debugging puzzle. It was 1 AM, I had class in a few hours, and I genuinely did not know if I was capable of finishing this. The root cause, when it finally showed up, was almost insulting in how small it was: Pydantic wanted a JSON list. I'd given it a comma-separated string.
+
+One formatting choice. One entire night gone. I sat there for a second not knowing whether to laugh or just feel tired.
+
+> Software is annoyingly literal.
+
+When the health check finally came back green, I actually felt something in my chest loosen.
+
+```json
+{"status":"ok"}
+```
+
+> Look at that. The machine breathes.
+
+I saved a screenshot of that response. I don't know why. I think some part of me knew I'd want to remember exactly what relief looked like that night.
+
+## The night it stopped being a school project
+
+March 12, 7:38 PM to 3:55 AM. Eight hours straight. I didn't plan for it to take that long. I just kept finding one more thing that scared me enough to fix before I let myself sleep.
+
+Somewhere in the middle of that night, I found something myself, without anyone pointing it out. Usernames were sitting in plain text inside localStorage. Anyone who opened DevTools could see exactly who had solved what, before the event even started. Nobody told me to check. I just had a bad feeling and went looking, and the feeling was right.
+
+Fixing it took minutes. Sitting with what almost happened took longer.
+
+> Browsers lie. Servers decide truth.
+
+By the time the sun was basically about to come up, three review rounds deep, the scores landed at nine out of ten. I remember reading that number at 4 AM and not quite believing it applied to something I'd built.
+
+> When the event starts: something minor will break, you will fix it in 5 minutes, everyone will think the system was flawless. That's how good infrastructure works. Quiet. Invisible. Slightly resentful that nobody notices the effort.
+
+I read that line three times. It felt like it was written for exactly the tired, slightly proud, slightly hollowed-out version of me reading it that night.
+
+## The part where I stopped just trusting the answers
+
+I'd asked for a full capacity model weeks earlier, the one that decided how many API keys we actually needed. When I came back to double check it, something in me had changed since February. I didn't just accept the numbers this time. I sat down and ran my own simulation.
+
+I found five mathematical errors in math I had trusted completely a few weeks before.
+
+Rated it 5 out of 10. Sent back the corrected version, numbers and all.
+
+> Congratulations. You actually audited the math instead of worshipping the first spreadsheet that looked confident. Rare behavior for our species.
+
+That sentence meant more to me than I expected it to. Not because a GPT said it, but because it meant I'd become someone who checks the work instead of someone who just hopes it's right. The corrected version came back. I found four more issues. Rated it 8 out of 10. The final number never actually moved, twenty keys from different accounts, but it stopped being something I was told and became something I'd earned by not trusting the first answer I got.
+
+## What was actually standing at the end
+
+Four services, one stack. Nginx out front, FastAPI running the AI gameplay, PostgreSQL holding player state, CTFd handling auth and scoring. One domain. No weird ports left open by accident. No database shared between anything, because that's exactly how I'd read other CTFs die in production, and I was not going to be the post-mortem someone else reads next year.
+
+![The technical head, standing in the room where it happened](/entropy-images/tech-head.png)
+*Jacket says Technical Head. The rest of me was just hoping the server stayed up.*
+
+## What I actually walked away with
+
+February: I asked someone smarter than me what a real CTF even looks like, and I didn't pretend to already know.
+
+March 5: the machine breathed for the first time, and I felt that in a way I wasn't expecting to.
+
+March 13: nine out of ten, at 4 AM, after a night I gave willingly because I didn't want to find out the hard way that something was wrong.
+
+March 14: I handed my own code to another AI for a security audit and it found eight real issues, and instead of feeling embarrassed, I felt like I'd finally built something worth auditing.
+
+March 15: I corrected the tool that taught me the math in the first place, and it thanked me for catching it.
+
+The event itself was a contest about breaking AI. The month before it was quietly, privately, about learning to trust myself around one instead of being scared of it, or worse, blindly trusting it either.
+
+On event day, something small broke. I fixed it in five minutes. Everyone thought it had been flawless the whole time.
+
+Nobody saw the version of me at 5:33 AM designing the rule that held it all together. Nobody saw the 1 AM I almost gave up over a single comma. Nobody saw the night I found a leak myself and had to sit with almost missing it.
+
+I did. And now, so do you.

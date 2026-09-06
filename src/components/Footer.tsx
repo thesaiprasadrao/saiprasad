@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SpotifyNowPlaying from "@/src/components/SpotifyNowPlaying";
 import { navLinks } from "@/src/data";
 
 export default function Footer() {
@@ -53,6 +54,7 @@ export default function Footer() {
         <br />
         © Saiprasad Rao.
       </div>
+      <SpotifyNowPlaying />
     </>
   );
 }
