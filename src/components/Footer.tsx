@@ -1,8 +1,21 @@
 import Link from "next/link";
+import { execSync } from "child_process";
 import SpotifyNowPlaying from "@/src/components/SpotifyNowPlaying";
 import { navLinks } from "@/src/data";
 
+function getLastUpdated(): string {
+  try {
+    const date = execSync('git log -1 --format=%cd --date=format:"%B %Y"', {
+      cwd: process.cwd(),
+    }).toString().trim();
+    return date || "unknown";
+  } catch {
+    return "unknown";
+  }
+}
+
 export default function Footer() {
+  const lastUpdated = getLastUpdated();
   return (
     <>
       <nav style={{
@@ -50,7 +63,7 @@ export default function Footer() {
         letterSpacing: "0.02em",
         textAlign: "center",
       }}>
-        Estd in 2006 · Last updated August 2026
+        Estd in 2006 · Last updated {lastUpdated}
         <br />
         © Saiprasad Rao.
       </div>
