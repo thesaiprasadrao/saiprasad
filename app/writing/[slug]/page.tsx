@@ -4,6 +4,11 @@ import Footer from "@/src/components/Footer";
 import { writings } from "@/src/data";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import NobodyReadsFixedStuff from "@/content/writing/nobody-reads-fixed-stuff.mdx";
+
+const contentBySlug: Record<string, () => React.ReactNode> = {
+  "nobody-reads-fixed-stuff": () => <NobodyReadsFixedStuff />,
+};
 
 type Props = { params: { slug: string } };
 
@@ -19,6 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function WritingPost({ params }: Props) {
   const post = writings.find(w => w.slug === params.slug);
   if (!post) notFound();
+
+  const Content = contentBySlug[params.slug];
+  if (!Content) notFound();
 
   return (
     <div
@@ -51,15 +59,8 @@ export default function WritingPost({ params }: Props) {
         })}
       </div>
 
-      {/* ── Drop your MDX content here ── */}
-      <div style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.8 }}>
-        <p>
-          This is a placeholder for <strong>{post.title}</strong>.
-        </p>
-        <p>
-          To add real content, install <code>@next/mdx</code> and create{" "}
-          <code>content/writing/{post.slug}.mdx</code>. The README has full instructions.
-        </p>
+      <div className="prose">
+        <Content />
       </div>
 
       <Divider />

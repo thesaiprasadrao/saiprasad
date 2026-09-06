@@ -96,6 +96,57 @@ a:hover {
   outline: 2px solid color-mix(in srgb, var(--fg) 60%, transparent);
   outline-offset: 2px;
 }
+/* ── Writing / MDX prose ── */
+.prose h2 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 32px 0 10px;
+  letter-spacing: 0.01em;
+}
+
+.prose p {
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.8;
+}
+
+.prose code {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.82em;
+  background: color-mix(in srgb, var(--border) 40%, transparent);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.prose strong {
+  font-weight: 500;
+}
+
+.prose ul,
+.prose ol {
+  margin: 0 0 14px;
+  padding-left: 1.4em;
+}
+
+.prose li {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 4px;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 28px 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .scroll-reveal {
     opacity: 1;

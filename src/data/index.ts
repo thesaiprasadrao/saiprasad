@@ -118,7 +118,11 @@ export const navLinks: NavLink[] = [
   { label: "linkedin", href: "https://www.linkedin.com/in/saiprasadrao/" },
 ];
 
-// Placeholder writings — replace with real MDX slugs later
 export const writings: Writing[] = [
-  
+  {
+    slug: "nobody-reads-fixed-stuff",
+    title: "nobody reads \"fixed stuff\" and thinks anything good about you",
+    date: "2026-09-06",
+    description: "Your commit history is a diary for a version of yourself that has forgotten everything. Say what changed, not that something changed.",
+  },
 ];

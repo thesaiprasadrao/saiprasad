@@ -1,0 +1,73 @@
+Okay so real talk.
+
+You've done this. I've done this. Everyone who has ever touched a keyboard has typed `git commit -m "fixes"` at 2am and hit enter without a second thought.
+
+Three months later you're staring at your own commit log trying to figure out why the auth flow broke. All you've got is a wall of "fix", "fix again", "actually fix", "please work".
+
+Cool. Very useful. Thanks, past me.
+
+Here's the thing nobody tells you: your commit history is a diary you're writing for a version of yourself that has forgotten everything. Six months from now you won't remember why you touched that config file.
+
+Your commit message is the only one who will.
+
+## say what changed, not that something changed
+
+"Update file" tells me nothing.
+
+"Fix null check on user session token" tells me exactly where to look when things go wrong.
+
+Five extra seconds of typing. Twenty minutes of debugging saved.
+
+## one commit, one idea
+
+If your message has "and" in it three times, you committed three different things at once.
+
+Split it up. Future-you running `git blame` will actually be able to pinpoint what broke what.
+
+## headline short, details below
+
+Keep the first line to around 50 characters. Blank line after. Then whatever context matters.
+
+Most commits don't need an essay. But when you fixed something weird and non-obvious, leave a note on *why*, not just *what*.
+
+## skip the drama
+
+No "OMG finally fixed this stupid bug." No exclamation marks.
+
+You're leaving breadcrumbs for whoever reads this next. That person is probably you, at 11pm, trying to ship before a deadline.
+
+---
+
+## okay but how do I actually structure the message
+
+This is where prefixes come in. You've probably seen commits like `feat: add dark mode` or `fix: resolve login crash` and wondered if that's a whole system. It kind of is, it's called Conventional Commits, and the idea is dead simple.
+
+Start your message with a tag that says what *kind* of change this is:
+
+- `feat:` — you added something new. A feature, an endpoint, a button.
+- `fix:` — you fixed a bug. Something was broken, now it isn't.
+- `chore:` — boring maintenance. Updating dependencies, config tweaks, nothing user-facing.
+- `refactor:` — code changed shape but behavior didn't. No new features, no bug fixes, just cleaner internals.
+- `docs:` — you touched documentation. README, comments, that kind of thing.
+- `style:` — formatting only. Spacing, semicolons, linting. Zero logic changed.
+- `test:` — you added or fixed tests.
+
+So instead of `git commit -m "login stuff"`, you write:
+
+`fix: prevent expired tokens from passing session check`
+
+Instead of `git commit -m "cleanup"`:
+
+`refactor: extract payment logic into separate service`
+
+Why bother? Two reasons.
+
+One, it forces you to actually decide what kind of change you're making, which keeps your commits focused. Hard to write `feat:` on something that's really three bug fixes stapled together.
+
+Two, tools can read it. Changelogs, release notes, even version bumps can auto-generate off these tags if your project's set up for it. Your commit log turns from a mess into something almost useful.
+
+You don't need to memorize the whole spec. Just pick the tag, then say what changed, plainly.
+
+`type: what changed`
+
+That's the whole trick.
