@@ -129,6 +129,6 @@ export const writings: Writing[] = [
     slug: "ai-jailbreak-ctf",
     title: "I built an AI jailbreak CTF and lived to tell about it",
     date: "2026-09-16",
-    description: "A month of building, breaking, and almost shipping a broken CTF for Phoenix 3.0. From 5:33 AM panic to a system that passed three security reviews.",
+    description: "A month of building, breaking, and almost shipping a broken CTF for Phoenix 3.0.",
   },
 ];
