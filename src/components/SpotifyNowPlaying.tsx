@@ -35,7 +35,7 @@ export default function SpotifyNowPlaying() {
         fontSize: "0.75rem",
         color: "var(--muted)",
         letterSpacing: "0.02em",
-        textAlign: "center",
+        textAlign: "left",
       }}
     >
       <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
