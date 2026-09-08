@@ -1,3 +1,5 @@
+import SpotifyNowPlaying from "@/src/components/SpotifyNowPlaying";
+
 export default function Intro() {
   return (
     <>
@@ -38,6 +40,7 @@ export default function Intro() {
       <a href="https://drive.google.com/file/d/19ceHsb_AbPveL3kwAYlgHUKrBx-kWfWG/view?usp=sharing" target="_blank" rel="noopener">
         <p>📄 my resume {" "}</p>
       </a>
+      <SpotifyNowPlaying />
     </>
   );
 }

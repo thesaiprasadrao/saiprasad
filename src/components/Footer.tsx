@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { execSync } from "child_process";
-import SpotifyNowPlaying from "@/src/components/SpotifyNowPlaying";
 import { navLinks } from "@/src/data";
 
 function getLastUpdated(): string {
@@ -67,7 +66,6 @@ export default function Footer() {
         <br />
         © Saiprasad Rao.
       </div>
-      <SpotifyNowPlaying />
     </>
   );
 }
