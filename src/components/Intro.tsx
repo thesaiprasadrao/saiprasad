@@ -1,4 +1,4 @@
-import SpotifyNowPlaying from "@/src/components/SpotifyNowPlaying";
+import SpotifyNowPlaying from "./SpotifyNowPlaying";
 
 export default function Intro() {
   return (
