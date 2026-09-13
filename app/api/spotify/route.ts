@@ -36,6 +36,10 @@ async function getAccessToken(): Promise<string> {
   }
 
   const data = await res.json();
+  console.log("token refresh response:", JSON.stringify(data));
+  if (!data.access_token) {
+    throw new Error(`no access_token in response: ${JSON.stringify(data)}`);
+  }
   cachedToken = {
     access: data.access_token,
     expiresAt: now + data.expires_in * 1000 - 60_000,
@@ -45,13 +49,24 @@ async function getAccessToken(): Promise<string> {
 
 export async function GET() {
   try {
-    const token = await getAccessToken();
-    const res = await fetch(RECENT_URL, {
+    let token = await getAccessToken();
+    let res = await fetch(RECENT_URL, {
       headers: { Authorization: `Bearer ${token}` },
+      cache: "no-store",
     });
 
+    if (res.status === 401) {
+      cachedToken = null;
+      token = await getAccessToken();
+      res = await fetch(RECENT_URL, {
+        headers: { Authorization: `Bearer ${token}` },
+        cache: "no-store",
+      });
+    }
+
     if (!res.ok) {
-      throw new Error(`recently-played failed: ${res.status}`);
+      const body = await res.text();
+      throw new Error(`recently-played failed: ${res.status} ${body}`);
     }
 
     const data = await res.json();
@@ -60,13 +75,16 @@ export async function GET() {
       return NextResponse.json({ track: null });
     }
 
-    return NextResponse.json({
-      track: item.track?.name ?? null,
-      artist: item.track?.artists?.[0]?.name ?? null,
-      playedAt: item.played_at ?? null,
-    });
+    return NextResponse.json(
+      {
+        track: item.track?.name ?? null,
+        artist: item.track?.artists?.[0]?.name ?? null,
+        playedAt: item.played_at ?? null,
+      },
+      { headers: { "Cache-Control": "no-store" } },
+    );
   } catch (err) {
-    // Silent for the site visitor — the footer just hides the line on failure.
+    console.error("spotify route error:", err);
     return NextResponse.json({ error: "spotify unavailable" }, { status: 503 });
   }
 }

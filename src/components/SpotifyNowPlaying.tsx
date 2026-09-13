@@ -9,19 +9,26 @@ export default function SpotifyNowPlaying() {
 
   useEffect(() => {
     let cancelled = false;
-    fetch("/api/spotify")
-      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then((data: NowPlaying) => {
-        if (cancelled) return;
-        if (data.track && data.artist) {
-          setLine(`last played · ${data.track} — ${data.artist}`);
-        }
-      })
-      .catch(() => {
-        // Silent — footer just stays without the line.
-      });
+
+    function fetchTrack() {
+      fetch(`/api/spotify?t=${Date.now()}`)
+        .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+        .then((data: NowPlaying) => {
+          if (cancelled) return;
+          if (data.track && data.artist) {
+            setLine(`last played · ${data.track} — ${data.artist}`);
+          }
+        })
+        .catch(() => {
+          // Silent — footer just stays without the line.
+        });
+    }
+
+    fetchTrack();
+    const interval = setInterval(fetchTrack, 60_000);
     return () => {
       cancelled = true;
+      clearInterval(interval);
     };
   }, []);
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { execSync } from "child_process";
 import { navLinks } from "@/src/data";
+import SpotifyNowPlaying from "./SpotifyNowPlaying";
 
 function getLastUpdated(): string {
   try {
